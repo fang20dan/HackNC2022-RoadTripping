@@ -6,7 +6,7 @@ end =  "Raleigh" #input("Where are we Roadioing to? ")
 #API call URL
 url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + start + "&destination=" + end + "&key=AIzaSyAZ4JRLT7zandwa_yDpVq71vQZRD_n5z7U"
 
-payload={}
+payload = {}
 headers = {}
 
 #gets information from google maps API and stores as json
