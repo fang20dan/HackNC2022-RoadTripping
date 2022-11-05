@@ -12,6 +12,10 @@
 		740A3C512916CE2200A939D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740A3C502916CE2200A939D6 /* Assets.xcassets */; };
 		740A3C542916CE2200A939D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740A3C532916CE2200A939D6 /* Preview Assets.xcassets */; };
 		740A3C5D2916D19000A939D6 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C5C2916D19000A939D6 /* HomeScreenView.swift */; };
+		740A3C5F2916F5AF00A939D6 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C5E2916F5AF00A939D6 /* ResultsView.swift */; };
+		740A3C612916FF3A00A939D6 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C602916FF3A00A939D6 /* TripDetailsView.swift */; };
+		740A3C632917008F00A939D6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C622917008F00A939D6 /* MapView.swift */; };
+		740A3C652917041400A939D6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C642917041400A939D6 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		740A3C502916CE2200A939D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		740A3C532916CE2200A939D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		740A3C5C2916D19000A939D6 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		740A3C5E2916F5AF00A939D6 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		740A3C602916FF3A00A939D6 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
+		740A3C622917008F00A939D6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		740A3C642917041400A939D6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,12 @@
 				740A3C4C2916CE2100A939D6 /* RoadioApp.swift */,
 				740A3C4E2916CE2100A939D6 /* ContentView.swift */,
 				740A3C5C2916D19000A939D6 /* HomeScreenView.swift */,
+				740A3C602916FF3A00A939D6 /* TripDetailsView.swift */,
 				740A3C502916CE2200A939D6 /* Assets.xcassets */,
+				740A3C5E2916F5AF00A939D6 /* ResultsView.swift */,
+				740A3C622917008F00A939D6 /* MapView.swift */,
 				740A3C522916CE2200A939D6 /* Preview Content */,
+				740A3C642917041400A939D6 /* LocationManager.swift */,
 			);
 			path = Roadio;
 			sourceTree = "<group>";
@@ -141,7 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				740A3C5D2916D19000A939D6 /* HomeScreenView.swift in Sources */,
+				740A3C632917008F00A939D6 /* MapView.swift in Sources */,
+				740A3C5F2916F5AF00A939D6 /* ResultsView.swift in Sources */,
+				740A3C652917041400A939D6 /* LocationManager.swift in Sources */,
 				740A3C4F2916CE2100A939D6 /* ContentView.swift in Sources */,
+				740A3C612916FF3A00A939D6 /* TripDetailsView.swift in Sources */,
 				740A3C4D2916CE2100A939D6 /* RoadioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,8 +287,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roadio/Preview Content\"";
+				DEVELOPMENT_TEAM = WHSJ688ZS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to display it on map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,8 +317,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roadio/Preview Content\"";
+				DEVELOPMENT_TEAM = WHSJ688ZS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to display it on map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
