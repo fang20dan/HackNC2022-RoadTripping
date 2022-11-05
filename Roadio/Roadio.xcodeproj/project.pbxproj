@@ -11,6 +11,7 @@
 		740A3C4F2916CE2100A939D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C4E2916CE2100A939D6 /* ContentView.swift */; };
 		740A3C512916CE2200A939D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740A3C502916CE2200A939D6 /* Assets.xcassets */; };
 		740A3C542916CE2200A939D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740A3C532916CE2200A939D6 /* Preview Assets.xcassets */; };
+		740A3C5D2916D19000A939D6 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C5C2916D19000A939D6 /* HomeScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		740A3C4E2916CE2100A939D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		740A3C502916CE2200A939D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		740A3C532916CE2200A939D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		740A3C5C2916D19000A939D6 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				740A3C4C2916CE2100A939D6 /* RoadioApp.swift */,
 				740A3C4E2916CE2100A939D6 /* ContentView.swift */,
+				740A3C5C2916D19000A939D6 /* HomeScreenView.swift */,
 				740A3C502916CE2200A939D6 /* Assets.xcassets */,
 				740A3C522916CE2200A939D6 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740A3C5D2916D19000A939D6 /* HomeScreenView.swift in Sources */,
 				740A3C4F2916CE2100A939D6 /* ContentView.swift in Sources */,
 				740A3C4D2916CE2100A939D6 /* RoadioApp.swift in Sources */,
 			);
