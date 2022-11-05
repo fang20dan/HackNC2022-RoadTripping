@@ -3,7 +3,6 @@ from map_request import *
 
 
 #getting total time/distance text and values. values are in seconds and meters respectively
-
 distanceTotalText = extract_element_from_json(responsedict, ["routes", "legs", "distance", "text"])[0]
 timeTotalText = extract_element_from_json(responsedict, ["routes", "legs", "duration", "text"])[0]
 distanceTotalValue = extract_element_from_json(responsedict, ["routes", "legs", "distance", "value"])[0]
