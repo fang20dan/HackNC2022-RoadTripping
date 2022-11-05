@@ -1,7 +1,6 @@
 from UtilsFunctions.extract_function import *
 from map_request import *
 
-
 def get_route():
     route = {}
     #getting total time/distance text and values. values are in seconds and meters respectively
