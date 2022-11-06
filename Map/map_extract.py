@@ -1,5 +1,5 @@
-from Map.extract_function import *
-from Map.map_request import *
+from extract_function import *
+from map_request import *
 
 
 def get_route():
@@ -16,3 +16,5 @@ def get_route():
     route["startLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "start_location"])
     route["endLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "end_location"])
     return route
+
+print(get_route())

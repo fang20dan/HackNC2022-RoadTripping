@@ -42,6 +42,7 @@ def getTankSize():
     return float(tankSize)
 
 selectCar(inputMake, inputModel, inputYear)
+print(getTankSize())
 
 
 
