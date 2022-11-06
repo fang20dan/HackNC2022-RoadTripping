@@ -1,5 +1,5 @@
 import requests
-from extract_function import extract_element_from_json
+from Map.extract_function import extract_element_from_json
 
 #this is the latitutude and longitude of the certain area that we choose
 lat = str(35.2271)
