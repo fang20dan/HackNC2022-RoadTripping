@@ -1,4 +1,4 @@
-from UtilsFunctions.extract_function import *
+from extract_function import *
 from map_request import *
 
 
@@ -12,7 +12,7 @@ def get_route():
 
     #getting steps to measure time/distance/locations for weather measurements
     route["distanceSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "distance"])
-    route["timeSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "duration"])
+    route["timeSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "duration", "value"])
     route["startLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "start_location"])
     route["endLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "end_location"])
     return route
