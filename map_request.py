@@ -1,7 +1,7 @@
 import requests
 
 start = "Charlotte" #input("Please enter a starting destination: ")
-end =  "Raleigh" #input("Where are we Roadioing to? ")
+end =  "New York" #input("Where are we Roadioing to? ")
 
 #API call URL
 url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + start + "&destination=" + end + "&key=AIzaSyAZ4JRLT7zandwa_yDpVq71vQZRD_n5z7U"
@@ -14,3 +14,4 @@ response = requests.request("GET", url, headers=headers, data=payload)
 
 #turns response json into dictionary
 responsedict = response.json()
+

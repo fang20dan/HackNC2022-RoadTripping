@@ -1,5 +1,5 @@
 import requests
-from Map.extract_function import *
+from extract_function import *
 
 make = "Acura"
 model = "ILX"
