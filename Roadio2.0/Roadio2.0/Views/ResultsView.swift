@@ -11,6 +11,8 @@ import SwiftUI
 struct ResultsView: View {
     @StateObject var mapViewModel = MapViewModel()
 
+    @State var steps: [Step] = []
+
     @Binding var origin: String
     @Binding var destination: String
 
@@ -21,10 +23,17 @@ struct ResultsView: View {
                     .bold()
                     .foregroundColor(Color("SickGreen"))
 
-                Text(mapViewModel.MapData?.routes?[0].legs?[0].distance?.text ?? "N/A")
+                Text(String(mapViewModel.MapData?.routes?[0].legs?[0].distance?.text ?? "N/A"))
                     .bold()
-                Text(mapViewModel.MapData?.routes?[0].legs?[0].duration?.text ?? "N/A")
+                Text(String(mapViewModel.MapData?.routes?[0].legs?[0].duration?.text ?? "N/A"))
                     .bold()
+            }
+            .font(.system(.title2))
+
+            VStack {
+                ForEach(mapViewModel.MapData?.routes?[0].legs?[0].steps ?? []) { step in
+                    Text(String(step.distance?.value ?? 69))
+                }
             }
         }
         .onAppear {

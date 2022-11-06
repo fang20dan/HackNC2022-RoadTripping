@@ -88,7 +88,8 @@ struct Distance: Codable {
 }
 
 // MARK: - Step
-struct Step: Codable {
+struct Step: Codable, Identifiable {
+    let id: UUID = UUID()
     let distance, duration: Distance?
     let endLocation: Northeast?
     let htmlInstructions: String?

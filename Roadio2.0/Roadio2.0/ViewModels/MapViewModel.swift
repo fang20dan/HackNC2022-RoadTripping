@@ -9,6 +9,7 @@ import Foundation
 
 class MapViewModel: ObservableObject {
     @Published var MapData: MapDirections?
+    @Published var steps: [Step]?
 
     func fetchMapData(origin: String, destination: String) async {
         guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=AIzaSyAZ4JRLT7zandwa_yDpVq71vQZRD_n5z7U") else {
@@ -20,7 +21,6 @@ class MapViewModel: ObservableObject {
             let (data, _) = try await URLSession.shared.data(from: url)
 
             if let decodedData = try? JSONDecoder().decode(MapDirections.self, from: data) {
-                
                 self.MapData = decodedData
             } else {
                 print("Decoding error")
@@ -29,4 +29,7 @@ class MapViewModel: ObservableObject {
             print("Error Loading Data")
         }
     }
+    
+    
+   
 }
