@@ -1,5 +1,5 @@
 import requests
-from extract_function import extract_element_from_json
+from Map.extract_function import extract_element_from_json
 
 #google maps then goes and finds a gas station in the area
 def find_addy(lat, lng) -> str:
@@ -26,10 +26,4 @@ def find_price(city) -> float:
     res = requests.request("GET", url, headers=header)
     data = res.json()
     price = extract_element_from_json(data, ["result", "state", "gasoline"])
-    return float(price[0])
-
-
-"""def main():
-    address = find_addy(str(40.7128), str(-74.0060))
-    print(address)
-    print(sparse_addy(address))"""
+    return price[0]

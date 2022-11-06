@@ -1,5 +1,5 @@
 import requests
-from extract_function import *
+from Map.extract_function import *
 
 make = "Acura"
 model = "ILX"
@@ -10,5 +10,4 @@ def get_mpg() -> int:
     response = requests.request("GET", url, headers={'X-Api-Key': 'FXonr/duT4t53NEl4KetRA==sILBL3Prhi1turK4'})
     responsedict = response.json()
 
-    return int(extract_element_from_json(responsedict, ["combination_mpg"])[0][0])
-    
+    return extract_element_from_json(responsedict, ["combination_mpg"])[0][0]
