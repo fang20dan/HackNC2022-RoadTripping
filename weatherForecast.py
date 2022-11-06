@@ -1,12 +1,16 @@
-from Map.map_extract import get_route
-from Weather.retrieveWeather import get_prep, get_temp, get_weather
+from map_extract import get_route
+from retrieveWeather import get_weather
+from datetime import datetime, timedelta
+
+lat = "35.899963968159"
+lng = "-79.04617075972824"
 
 route = get_route()
-
 weather_hourlyReport = {}
+weather = get_weather(lat, lng)
 
 def estimateLocation(currentLocation: "dict[str, str]", nextLocation: "dict[str, str]", totalTravelTime: int, scale: float) -> "dict[str, str]":
-    """returns the estimated location between two points given the time of travel"""
+    """Helper function that returns the estimated location between two points given the time of travel"""
     estimatedLocation = {}
     lat = round(((float(nextLocation["lat"]) - float(currentLocation["lat"])) / scale), 7)
     lng = round(((float(nextLocation["lng"]) - float(currentLocation["lng"])) / scale), 7)
@@ -15,11 +19,8 @@ def estimateLocation(currentLocation: "dict[str, str]", nextLocation: "dict[str,
     estimatedLocation["lng"] =  str(float(currentLocation["lng"]) + lng)
     return estimatedLocation
 
-print(estimateLocation({"lat" : "25.8", "lng" : "48.2"}, {"lat" : "-83.4", "lng" : "74.3"}, 50, 12))
-
-"""route = {'distanceTotalText': '167 mi', 'timeTotalText': '2 hours 36 mins', 'distanceTotalValue': 268901, 'timeTotalValue': 9378, 'distanceSteps': [{'text': '0.2 mi', 'value': 281}, {'text': '0.5 mi', 'value': 809}, {'text': '384 ft', 'value': 117}, {'text': '0.4 mi', 'value': 588}, {'text': '2.3 mi', 'value': 3708}, {'text': '0.8 mi', 'value': 1208}, {'text': '81.0 mi', 'value': 130291}, {'text': '11.7 mi', 'value': 18890}, {'text': '32.1 mi', 'value': 51595}, {'text': '30.3 mi', 'value': 48838}, {'text': '1.0 mi', 'value': 1626}, {'text': '2.2 mi', 'value': 3598}, {'text': '3.1 mi', 'value': 4920}, {'text': '1.2 mi', 'value': 1956}, {'text': '0.3 mi', 'value': 472}, {'text': '13 ft', 'value': 4}], 'timeSteps': [96, 138, 12, 54, 178, 54, 4195, 617, 1670, 1592, 56, 137, 349, 148, 77, 5], 'startLocationSteps': [{'lat': 35.2271328, 'lng': -80.8431751}, {'lat': 35.2287765, 'lng': -80.8408224}, {'lat': 35.2336752, 'lng': -80.8473066}, {'lat': 35.2336606, 'lng': -80.8485735}, {'lat': 35.2371696, 'lng': -80.85337439999999}, {'lat': 35.2667215, 'lng': -80.8441677}, {'lat': 35.272774, 'lng': -80.8370491}, {'lat': 35.9999668, 'lng': -79.8612452}, {'lat': 36.049265, 'lng': -79.6867554}, {'lat': 36.0606489, 'lng': -79.1333262}, {'lat': 35.8207436, 'lng': -78.7441693}, {'lat': 35.81172919999999, 'lng': -78.7303702}, {'lat': 35.8034952, 'lng': -78.6930467}, {'lat': 35.7966078, 'lng': -78.6424313}, {'lat': 35.7797459, 'lng': -78.643395}, {'lat': 35.7795576, 'lng': -78.6381694}], 'endLocationSteps': [{'lat': 35.2287765, 'lng': -80.8408224}, {'lat': 35.2336752, 'lng': -80.8473066}, {'lat': 35.2336606, 'lng': -80.8485735}, {'lat': 35.2371696, 'lng': -80.85337439999999}, {'lat': 35.2667215, 'lng': -80.8441677}, {'lat': 35.272774, 'lng': -80.8370491}, {'lat': 35.9999668, 'lng': -79.8612452}, {'lat': 36.049265, 'lng': -79.6867554}, {'lat': 36.0606489, 'lng': -79.1333262}, {'lat': 35.8207436, 'lng': -78.7441693}, {'lat': 35.81172919999999, 'lng': -78.7303702}, {'lat': 35.8034952, 'lng': -78.6930467}, {'lat': 35.7966078, 'lng': -78.6424313}, {'lat': 35.7797459, 'lng': -78.643395}, {'lat': 35.7795576, 'lng': -78.6381694}, {'lat': 35.7795894, 'lng': -78.6381679}]}"""
-
-def splitLocations(route: "dict") -> dict[str, list[str]]:
+def splitLocations(route: "dict") -> "list":
+    """Function that finds the coordinates of each hour along the route"""
     count: int = 0
     i: int = 0
     locationSplits: list[dict] = []
@@ -36,12 +37,38 @@ def splitLocations(route: "dict") -> dict[str, list[str]]:
         locationSplits.append(route["endLocationSteps"][len(route["timeSteps"])-1])
     return locationSplits
 
-print(splitLocations(route))
+def splitTimes(splits: int) -> "list":
+    """Helper function that finds the time of each hour split"""
+    result: list[str] = []
+    i: int = 1
+    while i <= splits:
+        nextsplit = datetime.now() + timedelta(hours=i)
+        time: str = format(nextsplit, '%Y-%m-%dT')
+        if (int(nextsplit.strftime("%M")) <= 30):
+            time += nextsplit.strftime("%H") + ":00"
+        else:
+            nnsplit = nextsplit + timedelta(hours=1)
+            time += nnsplit.strftime("%H") + ":00"
+        result.append(time)
+        i += 1
+    return result
 
-def weatherReport(locations: "list") -> "dict":
-    weather_hourlyReport: dict = []
-    for i in locations:
-        report: list = []
-        report.append
-        weather_hourlyReport[i+1]
-    return
+
+def reportHourlyWeather(route: "dict", locations: "list") -> "dict":
+    """Generates the hourly weather report"""
+    weather_hourlyReport: dict = {}
+    times = splitTimes(len(locations))
+    i: int = 0
+    while i < len(locations):
+        j: int = 0
+        while j < len(route['time']):
+            if (route['time'][j] == times[i]):
+                splitinfo: list = []
+                splitinfo.append(route["temperature"][j])
+                splitinfo.append(route["precipitation"][j])
+                weather_hourlyReport[times[i]] = splitinfo
+            j += 1
+        i += 1
+    return weather_hourlyReport
+
+weather_hourlyReport = reportHourlyWeather(weather, splitLocations(route))
