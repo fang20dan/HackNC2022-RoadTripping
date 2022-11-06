@@ -19,6 +19,8 @@
 		740A3C902917548A00A939D6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 740A3C8F2917548A00A939D6 /* PythonKit */; };
 		740A3C942917559E00A939D6 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C932917559E00A939D6 /* MapViewModel.swift */; };
 		7482754429176B8C004231F2 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482754329176B8C004231F2 /* DirectionModel.swift */; };
+		7482754629177C4B004231F2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482754529177C4B004231F2 /* WeatherModel.swift */; };
+		7482754829178254004231F2 /* GasStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482754729178254004231F2 /* GasStationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		740A3C8C291743A800A939D6 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		740A3C932917559E00A939D6 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7482754329176B8C004231F2 /* DirectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
+		7482754529177C4B004231F2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		7482754729178254004231F2 /* GasStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				7482754329176B8C004231F2 /* DirectionModel.swift */,
+				7482754529177C4B004231F2 /* WeatherModel.swift */,
+				7482754729178254004231F2 /* GasStationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,10 +200,12 @@
 				7482754429176B8C004231F2 /* DirectionModel.swift in Sources */,
 				740A3C77291742C400A939D6 /* Roadio2_0App.swift in Sources */,
 				740A3C8B2917437300A939D6 /* DestinationPickView.swift in Sources */,
+				7482754629177C4B004231F2 /* WeatherModel.swift in Sources */,
 				740A3C85291742F200A939D6 /* LocationManager.swift in Sources */,
 				740A3C8D291743A800A939D6 /* ResultsView.swift in Sources */,
 				740A3C892917434300A939D6 /* TripDetailsView.swift in Sources */,
 				740A3C872917432000A939D6 /* HomescreenView.swift in Sources */,
+				7482754829178254004231F2 /* GasStationModel.swift in Sources */,
 				740A3C942917559E00A939D6 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
