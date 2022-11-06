@@ -16,7 +16,8 @@ def find_addy(lat, lng) -> str:
 #Finds the city of the gas station
 def sparse_addy(addre) -> str:
     sparsed_addy = addre.split(", ")
-    return sparsed_addy[1]
+    full_addy = sparsed_addy[1] + ", " + sparsed_addy[2][:2]
+    return full_addy
 
 #Makes the gas station call based on the city found
 def find_price(city) -> float:
@@ -29,4 +30,3 @@ def find_price(city) -> float:
     data = res.json()
     price = extract_element_from_json(data, ["result", "state", "gasoline"])
     return float(price[0])
-

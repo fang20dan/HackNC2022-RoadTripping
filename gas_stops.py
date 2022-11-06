@@ -48,6 +48,7 @@ def find_coord(y):
     global current_price
     global cost
     global mpg
+    global addy
     temp_lat = 0
     temp_lng = 0
     temp_miles = current_tank - tot_range
