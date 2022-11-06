@@ -11,11 +11,14 @@ import SwiftUI
 import SwiftUI
 
 struct TripDetailsView: View {
-    @State var carModel: String = ""
-    @State var carMake: String = ""
-    @State var carYear: Int = 0
+    @State var carTankSize: String = ""
+    @State var carMpg: String = ""
+    @State var carYear: String = "1"
     @State var location: String = ""
     @State var destination: String = ""
+    @State var mpg: String = ""
+    
+    @FocusState var isFocused: Bool
 
     @State var isNavigationLinkActive = false
 
@@ -25,29 +28,50 @@ struct TripDetailsView: View {
                 VStack(alignment: .leading) {
                     DestinationPickView(location: $location, destination: $destination)
 
-                    Text("Car Make")
+                    Text("Car Fuel Tank Size")
                         .bold()
                         .foregroundColor(Color("SickGreen"))
+                        
 
                     HStack {
                         Image(systemName: "car.fill")
 
-                        TextField("Car Make (i.e. Toyota)", text: $carMake)
+                        TextField("Please Enter a Value in Gallons", text: $carTankSize)
                             .textFieldStyle(DefaultTextFieldStyle())
+                            .focused($isFocused)
+                            .toolbar {
+                                ToolbarItemGroup(placement: .keyboard) {
+                                    Spacer()
+
+                                    Button("Done") {
+                                        isFocused = false
+                                    }
+                                }
+                            }
                     }
                     Divider()
                         .frame(height: 1)
                         .padding([.horizontal, .bottom], 30)
 
-                    Text("Car Model")
+                    Text("Fuel Economy")
                         .bold()
                         .foregroundColor(Color("SickGreen"))
 
                     HStack {
                         Image(systemName: "car.fill")
 
-                        TextField("Car Model (i.e. Camry)", text: $carModel)
+                        TextField("Please Enter a Value in Miles Per Gallon", text: $carMpg)
                             .textFieldStyle(DefaultTextFieldStyle())
+                            .focused($isFocused)
+                            .toolbar {
+                                ToolbarItemGroup(placement: .keyboard) {
+                                    Spacer()
+
+                                    Button("Done") {
+                                        isFocused = false
+                                    }
+                                }
+                            }
                     }
                     Divider()
                         .frame(height: 1)
@@ -74,8 +98,8 @@ struct TripDetailsView: View {
 
                 Spacer()
 
-                if !carModel.isEmpty && !location.isEmpty && !destination.isEmpty && !(carYear == 0) && !carMake.isEmpty {
-                    NavigationLink(destination: ResultsView(origin: $location, destination: $destination)) {
+                if !carMpg.isEmpty && !location.isEmpty && !destination.isEmpty && !carYear.isEmpty && !carTankSize.isEmpty {
+                    NavigationLink(destination: ResultsView(origin: $location, destination: $destination, carMpg: $carMpg, carTankSize: $carTankSize, carYear: $carYear)) {
                         Text("See Trip Details")
                             .padding()
                             .foregroundColor(.white)

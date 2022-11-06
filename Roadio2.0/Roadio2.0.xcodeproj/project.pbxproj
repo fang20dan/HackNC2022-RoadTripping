@@ -16,11 +16,16 @@
 		740A3C892917434300A939D6 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C882917434300A939D6 /* TripDetailsView.swift */; };
 		740A3C8B2917437300A939D6 /* DestinationPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C8A2917437300A939D6 /* DestinationPickView.swift */; };
 		740A3C8D291743A800A939D6 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C8C291743A800A939D6 /* ResultsView.swift */; };
-		740A3C902917548A00A939D6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 740A3C8F2917548A00A939D6 /* PythonKit */; };
 		740A3C942917559E00A939D6 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A3C932917559E00A939D6 /* MapViewModel.swift */; };
 		7482754429176B8C004231F2 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482754329176B8C004231F2 /* DirectionModel.swift */; };
 		7482754629177C4B004231F2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482754529177C4B004231F2 /* WeatherModel.swift */; };
 		7482754829178254004231F2 /* GasStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482754729178254004231F2 /* GasStationModel.swift */; };
+		7490E2322917857100326C2A /* CarMPGModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490E2312917857100326C2A /* CarMPGModel.swift */; };
+		7490E2342917858E00326C2A /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490E2332917858E00326C2A /* CarViewModel.swift */; };
+		7490E23629178E0E00326C2A /* GasStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490E23529178E0E00326C2A /* GasStationViewModel.swift */; };
+		7490E238291797B600326C2A /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490E237291797B600326C2A /* WeatherObject.swift */; };
+		7490E23A2917A00100326C2A /* GasStationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490E2392917A00100326C2A /* GasStationObject.swift */; };
+		7490E23C2917F0AD00326C2A /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490E23B2917F0AD00326C2A /* WeatherScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,12 @@
 		7482754329176B8C004231F2 /* DirectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
 		7482754529177C4B004231F2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		7482754729178254004231F2 /* GasStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationModel.swift; sourceTree = "<group>"; };
+		7490E2312917857100326C2A /* CarMPGModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMPGModel.swift; sourceTree = "<group>"; };
+		7490E2332917858E00326C2A /* CarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
+		7490E23529178E0E00326C2A /* GasStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationViewModel.swift; sourceTree = "<group>"; };
+		7490E237291797B600326C2A /* WeatherObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
+		7490E2392917A00100326C2A /* GasStationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationObject.swift; sourceTree = "<group>"; };
+		7490E23B2917F0AD00326C2A /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740A3C902917548A00A939D6 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				740A3C8A2917437300A939D6 /* DestinationPickView.swift */,
-				740A3C78291742C400A939D6 /* ContentView.swift */,
 				740A3C862917432000A939D6 /* HomescreenView.swift */,
+				740A3C78291742C400A939D6 /* ContentView.swift */,
 				740A3C882917434300A939D6 /* TripDetailsView.swift */,
 				740A3C8C291743A800A939D6 /* ResultsView.swift */,
+				7490E23B2917F0AD00326C2A /* WeatherScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,7 +116,9 @@
 		740A3C922917557F00A939D6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7490E2332917858E00326C2A /* CarViewModel.swift */,
 				740A3C932917559E00A939D6 /* MapViewModel.swift */,
+				7490E23529178E0E00326C2A /* GasStationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -116,6 +129,9 @@
 				7482754329176B8C004231F2 /* DirectionModel.swift */,
 				7482754529177C4B004231F2 /* WeatherModel.swift */,
 				7482754729178254004231F2 /* GasStationModel.swift */,
+				7490E2312917857100326C2A /* CarMPGModel.swift */,
+				7490E237291797B600326C2A /* WeatherObject.swift */,
+				7490E2392917A00100326C2A /* GasStationObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,7 +153,6 @@
 			);
 			name = Roadio2.0;
 			packageProductDependencies = (
-				740A3C8F2917548A00A939D6 /* PythonKit */,
 			);
 			productName = Roadio2.0;
 			productReference = 740A3C73291742C400A939D6 /* Roadio2.0.app */;
@@ -199,9 +214,15 @@
 				740A3C79291742C400A939D6 /* ContentView.swift in Sources */,
 				7482754429176B8C004231F2 /* DirectionModel.swift in Sources */,
 				740A3C77291742C400A939D6 /* Roadio2_0App.swift in Sources */,
+				7490E2322917857100326C2A /* CarMPGModel.swift in Sources */,
 				740A3C8B2917437300A939D6 /* DestinationPickView.swift in Sources */,
+				7490E23A2917A00100326C2A /* GasStationObject.swift in Sources */,
+				7490E23629178E0E00326C2A /* GasStationViewModel.swift in Sources */,
 				7482754629177C4B004231F2 /* WeatherModel.swift in Sources */,
+				7490E2342917858E00326C2A /* CarViewModel.swift in Sources */,
+				7490E238291797B600326C2A /* WeatherObject.swift in Sources */,
 				740A3C85291742F200A939D6 /* LocationManager.swift in Sources */,
+				7490E23C2917F0AD00326C2A /* WeatherScrollView.swift in Sources */,
 				740A3C8D291743A800A939D6 /* ResultsView.swift in Sources */,
 				740A3C892917434300A939D6 /* TripDetailsView.swift in Sources */,
 				740A3C872917432000A939D6 /* HomescreenView.swift in Sources */,
@@ -420,14 +441,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		740A3C8F2917548A00A939D6 /* PythonKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 740A3C8E2917548A00A939D6 /* XCRemoteSwiftPackageReference "PythonKit" */;
-			productName = PythonKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 740A3C6B291742C400A939D6 /* Project object */;
 }

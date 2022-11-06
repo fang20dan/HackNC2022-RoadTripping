@@ -11,10 +11,14 @@ class MapViewModel: ObservableObject {
     @Published var MapData: MapDirections?
 
     func fetchMapData(origin: String, destination: String) async {
-        guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=AIzaSyAZ4JRLT7zandwa_yDpVq71vQZRD_n5z7U") else {
+        let newOrigin = origin.replacingOccurrences(of: " ", with: "+")
+        let newDestination = destination.replacingOccurrences(of: " ", with: "+")
+        guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(newOrigin)&destination=\(newDestination)&key=AIzaSyAZ4JRLT7zandwa_yDpVq71vQZRD_n5z7U") else {
             print("Error")
             return
         }
+        
+        
 
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
