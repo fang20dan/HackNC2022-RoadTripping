@@ -8,7 +8,9 @@ inputMake = "Acura"
 inputModel = "ILX"
 inputYear = "2020"
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+op = webdriver.ChromeOptions()
+op.add_argument('headless')
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=op)
 
 driver.get('https://gastanksize.com/')
 
