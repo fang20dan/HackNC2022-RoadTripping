@@ -16,13 +16,17 @@ struct HomeScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                
+               
                 Map(coordinateRegion: $locationManager.region, showsUserLocation: true)
                    
                     .onAppear{
                         locationManager.checkIfLocationServicesIsEnabled()
                     }
-                VStack {
+                VStack(alignment: .center) {
+                    Image("Roadio")
+                        .resizable()
+                        .scaledToFit()
+                    
                     Spacer()
                     
                     NavigationLink(destination: TripDetailsView()) {
@@ -48,3 +52,4 @@ struct HomeScreenView_Previews: PreviewProvider {
         HomeScreenView()
     }
 }
+

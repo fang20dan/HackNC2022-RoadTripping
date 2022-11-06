@@ -1,5 +1,5 @@
-from extract_function import *
-from map_request import *
+from Map.extract_function import *
+from Map.map_request import *
 
 
 def get_route():

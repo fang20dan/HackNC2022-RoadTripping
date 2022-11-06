@@ -27,3 +27,4 @@ struct ResultsView_Previews: PreviewProvider {
         ResultsView()
     }
 }
+
