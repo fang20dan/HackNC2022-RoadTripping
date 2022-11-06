@@ -17,4 +17,7 @@ def get_route():
     route["endLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "end_location"])
     return route
 
-print(get_route())
+def get_totalTime():
+    return get_route()["distanceTotalText"]
+
+print(get_totalTime())
