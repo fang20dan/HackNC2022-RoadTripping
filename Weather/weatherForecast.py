@@ -1,5 +1,5 @@
 from retrieveWeather import *
-from Map.map_extract import *
+from map_extract import *
 
 """route = get_route()"""
 

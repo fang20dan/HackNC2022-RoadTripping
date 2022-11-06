@@ -16,5 +16,3 @@ def get_route():
     route["startLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "start_location"])
     route["endLocationSteps"] = extract_element_from_json(responsedict, ["routes", "legs", "steps", "end_location"])
     return route
-
-print(get_route())
