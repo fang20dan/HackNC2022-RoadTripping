@@ -20,5 +20,5 @@ print(estimateLocation({"lat" : "25.8", "lng" : "48.2"}, {"lat" : "-83.4", "lng"
 
 testroute = [96, 138, 12, 54, 178, 54, 4195, 617, 1670, 1592, 56, 137, 349, 148, 77, 5]
 
-def hourlySplits(route: "dict") -> dict[str, list[str]]:
+def hourlySplits(route: "dict") -> "dict[str, list[str]]":
     return
