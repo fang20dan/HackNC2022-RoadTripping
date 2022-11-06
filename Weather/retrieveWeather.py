@@ -16,3 +16,4 @@ def get_prep(response_dict: dict[str, str]) -> dict[str, str]:
     temperatures["time"] = response_dict["hourly"]["time"]
     temperatures["precipitation"] = response_dict["hourly"]["precipitation"]
     return temperatures
+
