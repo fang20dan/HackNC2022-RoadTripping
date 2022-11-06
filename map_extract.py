@@ -1,5 +1,5 @@
-from Map.extract_function import *
-from Map.map_request import *
+from extract_function import *
+from map_request import *
 
 
 def get_route():
@@ -18,6 +18,6 @@ def get_route():
     return route
 
 def get_totalDistance():
-    return get_route()["distanceTotalText"]
+    return str(get_route()["distanceTotalText"])
 
 print(get_totalDistance())
