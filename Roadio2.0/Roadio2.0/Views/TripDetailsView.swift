@@ -75,7 +75,7 @@ struct TripDetailsView: View {
                 Spacer()
 
                 if !carModel.isEmpty && !location.isEmpty && !destination.isEmpty && !(carYear == 0) && !carMake.isEmpty {
-                    NavigationLink(destination: ResultsView()) {
+                    NavigationLink(destination: ResultsView(origin: $location, destination: $destination)) {
                         Text("See Trip Details")
                             .padding()
                             .foregroundColor(.white)

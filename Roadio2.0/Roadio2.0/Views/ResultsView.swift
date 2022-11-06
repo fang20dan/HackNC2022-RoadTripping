@@ -8,20 +8,31 @@
 import Foundation
 import SwiftUI
 
-
 struct ResultsView: View {
-    @StateObject var mvm = mapViewModel()
+    @StateObject var mapViewModel = MapViewModel()
+
+    @Binding var origin: String
+    @Binding var destination: String
+
     var body: some View {
         VStack {
-            Text(mvm.loadDistance())
+            VStack(alignment: .leading) {
+                Text("Trip Overview")
+                    .bold()
+                    .foregroundColor(Color("SickGreen"))
+
+                Text(mapViewModel.MapData?.routes?[0].legs?[0].distance?.text ?? "N/A")
+                    .bold()
+                Text(mapViewModel.MapData?.routes?[0].legs?[0].duration?.text ?? "N/A")
+                    .bold()
+            }
         }
+        .onAppear {
+            Task {
+                await mapViewModel.fetchMapData(origin: origin, destination: destination)
+            }
+        }
+
         .padding()
     }
 }
-
-struct ResultsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultsView()
-    }
-}
-
