@@ -1,9 +1,5 @@
 import requests
-from Map.extract_function import extract_element_from_json
-
-#this is the latitutude and longitude of the certain area that we choose
-lat = str(35.2271)
-lng = str(-80.8431)
+from extract_function import extract_element_from_json
 
 #google maps then goes and finds a gas station in the area
 def find_addy(lat, lng) -> str:
@@ -17,8 +13,7 @@ def find_addy(lat, lng) -> str:
 
 #Finds the city of the gas station
 def sparse_addy(addre) -> str:
-    address = find_addy(lat, lng)
-    sparsed_addy = address.split(", ")
+    sparsed_addy = addre.split(", ")
     return sparsed_addy[1]
 
 #Makes the gas station call based on the city found
@@ -32,5 +27,3 @@ def find_price(city) -> float:
     data = res.json()
     price = extract_element_from_json(data, ["result", "state", "gasoline"])
     return price[0]
-
-print(find_price(sparse_addy(find_addy(lat,lng))))
