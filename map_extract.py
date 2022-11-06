@@ -5,6 +5,8 @@ from map_request import *
 def get_route():
     route = {}
     #getting total time/distance text and values. values are in seconds and meters respectively
+    route["startingLocation"] = extract_element_from_json(responsedict, ["routes", "legs", "start_address"])[0]
+    route["endingLocation"] = extract_element_from_json(responsedict, ["routes", "legs", "end_address"])[0]
     route["distanceTotalText"] = extract_element_from_json(responsedict, ["routes", "legs", "distance", "text"])[0]
     route["timeTotalText"] = extract_element_from_json(responsedict, ["routes", "legs", "duration", "text"])[0]
     route["distanceTotalValue"] = extract_element_from_json(responsedict, ["routes", "legs", "distance", "value"])[0]
@@ -19,5 +21,3 @@ def get_route():
 
 def get_totalDistance():
     return str(get_route()["distanceTotalText"])
-
-print(get_totalDistance())
